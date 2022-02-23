@@ -1,7 +1,23 @@
-version: 3
+version: '3.3'
 services:
   server:
-    build: ./server
+    build: ./api
+    restart: unless-stopped
     container_name: server
     ports:
       - 8000:8000
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "localhost:8000/api" ]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+  client:
+    build: ./client
+    restart: unless-stopped
+    container_name: client
+    ports:
+      - 3000:3000
+    depends_on:
+      server:
+        condition: service_started

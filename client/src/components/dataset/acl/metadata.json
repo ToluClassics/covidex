@@ -3,7 +3,7 @@
   "description": "A neural search engine for research literature",
   "favicon": "gwf_logo.ico",
   "dataset": "GWF Publications",
-  "searchPlaceholder": "something in the ACL anthology...",
+  "searchPlaceholder": "something in the GWF Publications...",
   "searchExamples": [
     "streamflow prediction",
     "Increasing wildfires threaten historic carbon sink of boreal forest soils"

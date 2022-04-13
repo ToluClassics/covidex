@@ -11,7 +11,7 @@ const ArticleInfo: React.FC<ArticleInfoProps> = ({
   boldTitle = false,
 }) => {
   let authorString = '';
-  var authors = article.author[0].split(", ");
+  var authors = article.author;
   //console.log(authors)
   if (authors.length > 0) {
     authors.forEach((author: string, idx: number) => {

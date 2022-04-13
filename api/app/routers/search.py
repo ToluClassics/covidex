@@ -103,6 +103,9 @@ async def get_search(request: Request, query: str):
     # Generate UUID for query.
     query_id = str(uuid4())
 
+    for res in ranked_results:
+        res.author = res.author[0].split(", ")
+
     # Log query and results.
     search_logger.info(
         json.dumps(
